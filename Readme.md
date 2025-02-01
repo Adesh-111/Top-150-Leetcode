@@ -1,6 +1,6 @@
-## Merge sorted arrays 
+## Merge Sorted Arrays
 
-''java
+```java
 import java.util.Arrays;
 
 public class Main {
@@ -32,4 +32,3 @@ public class Main {
         }
     }
 }
-''

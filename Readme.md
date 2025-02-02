@@ -32,3 +32,70 @@ public class Main {
         }
     }
 }
+```
+
+## Remove Element
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        int[] nums = {3, 2, 2, 3};
+        int val = 3;
+        int k = removeElement(nums, val);
+        for (int i = 0; i < k; i++) {
+            System.out.print(nums[i] + " ");
+        }
+    }
+
+    public static int removeElement(int[] nums, int val) {
+            int j = 0;
+            for (int i = 0; i < nums.length; i++){
+                if (nums[i] != val){
+                    nums[j] = nums[i];
+                    j++;
+                }
+            }
+            return j;
+    }
+}
+```
+
+## Majority Element
+
+```java
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {2, 2, 1, 1, 1, 2, 2};
+        int ans = majorityElement(arr);
+        System.out.println("The majority element is: " + ans);
+    }
+
+    static int majorityElement(int[] arr){
+        int count = 0;
+        int count1 = 0;
+        int e = 0;
+
+        for(int i = 0; i < arr.length; i++){
+            if(count == 0) {
+                count = 1;
+                e = arr[i];
+            }else if(e == arr[i]){
+                count++;
+            } else{
+                count--;
+            }
+        }
+        for(int i = 0; i < arr.length; i++){
+            if(e == arr[i]){
+                count1++;
+            }
+            if(count1 > arr.length/2){
+                return e;
+            }
+        }
+        return -1;
+    }
+}
+```
